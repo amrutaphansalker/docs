@@ -3,7 +3,8 @@ google_analytics: ['UA-44586211-2', 'docs.datatorrent.com']
 site_favicon: favicon.ico
 pages:
 - DataTorrent RTS:
-    - About DataTorrent RTS: index.md
+    - Welcome to DataTorrent RTS: index.md
+    - About DataTorrent RTS: rts.md
     - Getting Started:
         - Demo Applications: demos.md
         - Sandbox: sandbox.md
@@ -17,7 +18,7 @@ pages:
         - JAR Artifacts: jar_artifacts.md
 - Deployment and Operations:
     - Licensing: Licensing.md
-    - Installation: installation.md
+    - Installation/Deployment: installation.md
     - Configuration: configuration.md
     - Security: dtgateway_security.md
     - CLI: apexcli.md
