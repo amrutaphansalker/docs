@@ -57,17 +57,21 @@ pages:
 - AppFactory:
     - About AppFactory: app_factory.md
 - Applications:
+    - About Applications: about_applications.md
     - Building APOXI Compliant Applications: create.md
     - QSG - Launching Omni-Channel Fraud Prevention Application: quickstartlaunchfpa.md
     - QSG - Launching Account Takeover Prevention Application: quickstartlaunchato.md
-    - Omni Channel Fraud Prevention Application: omni_channel_fraud_app.md
-    - Account Takeover Prevention Application: Accounttakeover.md
+    - Application Guides:
+              - Omni Channel Fraud Prevention Application: omni_channel_fraud_app.md
+              - Account Takeover Prevention Application: Accounttakeover.md
 - Services:
+    - About Services: about_services.md
     - Creating APOXI Compliant Services: services.md
     - Launching Services: launch_services.md
-    - Online Analytics Service (OAS): oas.md
-    - OAS Dashboards: oas_dashboards.md
-    - CEP Workbench: cep_workbench.md
+    - Services Guides:
+              - Online Analytics Service (OAS): oas.md
+              - OAS Dashboards: oas_dashboards.md
+              - CEP Workbench: cep_workbench.md
 - Components:
     - About Components: components.md
     - List of Components: components_list.md
