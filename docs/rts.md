@@ -23,6 +23,10 @@ These include Easy-to-use and configure real-time and historical dashboards, man
 
 # Workflow in DT RTS
 (An  highlevel overview about how RTS functions. How all the above items fit together.)
+Managing (dtGateway)
+Monitoring (dtManage)
+Visualization (dtVisualize)
+Application Configuration / JAR artifacts
 
 # Understanding RTS User Interface
 (A briefing with images/callouts about the various sections on the UI.)
