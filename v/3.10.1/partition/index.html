@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../favicon.ico">
+  
+  <title>Partitioning - DataTorrent Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Partitioning";
+    var mkdocs_page_input_path = "partition.md";
+    var mkdocs_page_url = "/partition/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script type="text/javascript" src="../js/highlight.pack.js" defer></script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44586211-2', 'docs.datatorrent.com');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> DataTorrent Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">DataTorrent RTS</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Demos</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../demos/">Running Apps</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../sandbox/">Sandbox</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cloud Integration</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../aws_emr_manual/">AWS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../azure_deployment/">Azure</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Development</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../create/">Creating Applications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../beginner/">Beginner's Guide</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../demo_videos/">Videos</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Tutorials</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../tutorials/topnwords/">Top N Words</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../tutorials/salesdemo/">Sales Dimensions</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apex_development_setup/">Apex Development Setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../configure_IDE/">Generate New Project in IDE</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../application_development/">Applications</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../application_packages/">Application Packages</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../configuration_packages/">Configuration Packages</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Operator Development</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operator_development/">Guide</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operator_development_ref/">Reference</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Operators</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../library_operators/">Operators List</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/drools_operator/">Drools Operator</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/python_operator/">Python Operator</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/PMML_operator/">PMML Operator</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/tcpinputoperator/">TCP Input Operator</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/eventhubinput/">Event Hub Input Operator</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/eventhuboutput/">Event Hub Output Operator</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/abstracthttpserver/">Abstract HTTP Server Operator</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/azure_blob/">Azure Blob Storage Operator</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/aoooperator/">Analytics Output Operator</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/elasticsearch/">Elasticsearch Output Operator</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/block_reader/">Block Reader</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/deduper/">Deduper</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/dimensions_computation/">Dimension Computation</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/file_output/">File Output</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/file_splitter/">File Splitter</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/hdht/">HDHT</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/kafkaInputOperator/">Kafka Input</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../operators/snapshot_server/">Snapshot Server</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Partitioning</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#partitioning">Partitioning</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#no-partitioning">No Partitioning</a></li>
+        
+            <li><a class="toctree-l4" href="#static-partitioning">Static Partitioning</a></li>
+        
+            <li><a class="toctree-l4" href="#mxn-partitioning">MxN Partitioning</a></li>
+        
+            <li><a class="toctree-l4" href="#parallel-partitioning">Parallel Partitioning</a></li>
+        
+            <li><a class="toctree-l4" href="#dynamic-partitioning">Dynamic Partitioning</a></li>
+        
+            <li><a class="toctree-l4" href="#stateless-partitioning">Stateless Partitioning</a></li>
+        
+            <li><a class="toctree-l4" href="#triggering-and-configuring-parititioning">Triggering and Configuring Parititioning</a></li>
+        
+            <li><a class="toctree-l4" href="#statslistener">StatsListener</a></li>
+        
+            <li><a class="toctree-l4" href="#stream-codecs">Stream Codecs</a></li>
+        
+            <li><a class="toctree-l4" href="#partition-keys">Partition Keys</a></li>
+        
+            <li><a class="toctree-l4" href="#built-in-partitioners">Built-in Partitioners</a></li>
+        
+            <li><a class="toctree-l4" href="#unifiers">Unifiers</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app_data_framework/">App Data Framework</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dtgateway_api/">REST API</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">App Templates</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../app-templates/0.10.0/common/import-launch/">Import and Launch App-template</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/0.10.0/common/customize/">Customizing an app-template</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/0.10.0/database-to-database-sync/">Database-to-database-sync</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/0.10.0/hdfs-line-copy/">HDFS-line-copy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/0.10.0/hdfs-part-file-copy/">HDFS-part-file-copy</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/0.10.0/hdfs-to-hdfs-filter-transform/">HDFS-to-HDFS-filter-transform</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/0.10.0/kafka-to-cassandra-filter-transform/">Kafka-to-Cassandra-Filter-Transform</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/0.10.0/kafka-to-database-sync/">Kafka-to-Database-sync</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/0.10.0/kafka-to-hdfs-filter-transform/">Kafka-to-HDFS-Filter-Transform</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/0.10.0/kafka-to-kafka-filter-transform/">Kafka-to-Kafka-Filter-Transform</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/0.10.0/kinesis-to-redshift/">Kinesis-to-Redshift</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/0.10.0/kinesis-to-s3/">Kinesis-to-S3</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/0.10.0/s3-to-hdfs-sync/">S3-to-HDFS-sync</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/0.10.0/s3-to-redshift/">S3-to-HDFS-Filter-Transform</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/database-to-hdfs/">Database dump to HDFS App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/database-to-database-sync/">Database to Database Sync App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/hdfs-sync/">HDFS Sync App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/hdfs-line-copy/">HDFS to HDFS Line Copy App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/hdfs-to-kafka-sync/">HDFS to Kafka Sync App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/hdfs-to-s3-sync/">HDFS to S3 Sync App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/kafka-to-database-sync/">Kafka to Database Sync App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/kafka-to-hdfs-filter/">Kafka to HDFS Filter App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/kafka-to-hdfs-sync/">Kafka to HDFS Sync App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/kinesis-to-s3/">Kinesis to S3 App</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../app-templates/s3-to-hdfs-sync/">S3 to HDFS Sync App</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Applications</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../omni_channel_fraud_app/">Omni Channel Fraud Prevention Application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../Accounttakeover/">Account Takeover Prevention Application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../quickstartlaunchfpa/">Quick Start Guide - Omni-Channel Fraud Prevention Application</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../quickstartlaunchato/">Quick Start Guide - Account Takeover Prevention Application</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Services</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../cep_workbench/">CEP Workbench</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../oas_dashboards/">OAS Dashboards</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../oas/">Online Analytics Service (OAS)</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Platform</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../rts/">RTS</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../application_configurations/">Application Configurations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dtmanage/">dtManage</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dtdashboard/">dtDashboard</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dtgateway/">dtGateway</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../services/">Services</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../jar_artifacts/">JAR Artifacts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apex/">Apache Apex</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apex_malhar/">Apache Apex-Malhar</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../appbackplane/">Application Backplane</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../storeandreplay/">Store and Replay Feature</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Deployment and Operations</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../Licensing/">Licensing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../installation/">Installation</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../configuration/">Configuration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dtgateway_security/">Security</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../dtgateway_systemalerts/">System Alerts</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../apexcli/">Apex CLI</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../troubleshooting/">Troubleshooting</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../release_notes/">Release Notes</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../glossary/">Glossary</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../additional_docs/">Resources</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">DataTorrent Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Development &raquo;</li>
+        
+      
+    
+    <li>Partitioning</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="partitioning">Partitioning</h1>
+<p>Partitioning is a mechanism for load balancing and scaling. When the volume of tuples
+entering the input port(s) of an operator is very high, the operator may
+not be be able to cope, resulting in increased latencies and reduced
+throughput. In such situations, the platform provides multiple mechanisms to
+replicate the operator so that the load can be shared by all the replicas. These
+replicas can run as separate processes on separate nodes (assuming the cluster
+has adequate resources) thus yielding, potentially, a near-linear speedup.
+The replicas are often referred to as <em>partitions</em> of the operator.</p>
+<p>Partitioning introduces a number of specialized terms: <em>static partitioning</em>,
+<em>MxN partitioning</em>, <em>parallel partitioning</em>, <em>dynamic partitioning</em>, <em>stateless partitioning</em>,
+<em>unifiers</em>, <em>cascading unifiers</em>, <em>stream codecs</em>, <em>logical DAG</em>, and <em>physical DAG</em>.
+These terms will be explained in the sections that follow. We begin with a brief
+conceptual description of the various terms and then get into the specific
+mechanisms that developers can use to enable, configure and trigger partitioning.</p>
+<h2 id="no-partitioning">No Partitioning</h2>
+<p>On rare occasions, we may want to prevent an operator from being partitioned (for
+example, if the operator creates a connection to an external system, and multiple
+such connections are undesirable). This is done by explicitly adding the
+<a href="../beginner/#annotations">annotation</a> <code>@OperatorAnnotation(partitionable = false)</code>
+to the operator.</p>
+<h2 id="static-partitioning">Static Partitioning</h2>
+<p>When the expected input volumes are reliably known in advance, the number of partitions
+needed for an operator to process that flow at speed can be precomputed and specified
+as part of the application configuration. The platform will create the desired number
+of partitions before application launch and this number does not change thereafter.
+This is called <em>static partitioning</em>.</p>
+<p>In the presence of partitioning, the DAG as embodied by
+the running application clearly differs from that specified by the application writer:
+for one thing, there are replicas of one or more operators running; secondly, since
+the original computation defined as part of a single operator is now performed by
+multiple partitions, each partition can only compute partial results since it only sees part
+of the input stream; these partial results need to be stitched together somehow
+downstream of all the partitions. This is the function of a <em>unifier</em>. Application
+developers can optionally supply a unifier with custom logic (see below) to perform
+this unification; if none is provided, the platform will insert a default pass-through
+unifier.</p>
+<p>To reflect these differences, we use the term <em>logical DAG</em> to refer
+to the original version and <em>physical DAG</em> to refer to the version that is embodied
+by the running application. For example, consider an application that has 4 operators
+connected in a linear sequence; the logical DAG looks like this:</p>
+<p><img alt="" src="../images/LogicalDag.svg" />
+<em>Logical DAG</em></p>
+<p>If operator 1 is partitioned into 3 replicas, the physical DAG looks like this:</p>
+<p><img alt="" src="../images/PhysicalDag.svg" /></p>
+<p><em>Physical DAG</em></p>
+<h2 id="mxn-partitioning">MxN Partitioning</h2>
+<p>When two consecutive operators <em>A</em> and <em>B</em> are partitioned respectively into <em>M</em> and <em>N</em>
+partitions, each group of partitions needs, as noted above, a unifier. In such scenarios,
+there is potential for the unifiers themselves to become a bottleneck since they are
+handling all of the output data from the partitions of A or B. To mitigate this situation
+for A, the platform creates as many unifiers as there are partitions of B thus spreading
+the unification load across multiple unifiers. If the unifier for B is overloaded, the
+platform can be directed to create multiple replicas of that unifier, cascading into
+multiple levels if necessary to limit the number of input streams entering a single
+replica. This situation is called <em>MxN partitioning</em> and is illustrated by the following
+diagram where operators 1 and 2 respectively have 3 and 2 replicas.</p>
+<p><img alt="" src="../images/MxNPartitioning.svg" />
+<em>MxN Partitioning</em></p>
+<h2 id="parallel-partitioning">Parallel Partitioning</h2>
+<p>Sometimes, when an operator is partitioned, it is appropriate to replicate an entire
+linear segment of the DAG that is immediately downstream of that operator; this is called
+<em>parallel partitioning</em> and is typically done to avoid the shuffling of data that happens
+with MxN partitioning.  The streams of each partition are then kept segregated for the
+duration of that linear segment.  In such cases, if the stream volume substantially
+reduces at the end of the linear segment, network bandwidth consumption can also be
+significantly reduced by using CONTAINER_LOCAL or NODE_LOCAL
+<a href="../configuration/#stream-modes">locality</a> for the streams within that segment.</p>
+<p>Parallel partitioning is accomplished by setting an attribute of the input port of each
+operator that is part of the linear segment. Doing this for operators 2 and 3 and
+partitioning 1 into two replicas results in the following physical DAG:</p>
+<p><img alt="" src="../images/ParallelPartition.svg" />
+<em>Parallel Partitioning</em></p>
+<p>It is important to note that if an operator is connected to multiple downstream operators
+(via multiple ports), the parallel partitioning flag need not be set the same way on all
+the downstream operator ports. For example, assume operator A is connected (directly) to B
+and C and the flag is set on the input port of C but not B. If we create 2 partitions of
+A, we will see 2 partitions of C but only one of B.</p>
+<h2 id="dynamic-partitioning">Dynamic Partitioning</h2>
+<p>When the volume of data flows in a stream are not known in advance, using a fixed number
+of partitions is suboptimal: if the number is too large for the flows actually encountered,
+we end up consuming cluster resources needlessly; if too small, the original goal
+of removing bottlenecks remains unaccomplished.</p>
+<p>In such cases, the appropriate number of partitions needs to be determined based on
+observed latencies, throughput values or some custom performance metrics at runtime
+and the operator partitioned accordingly. This is called <em>dynamic partitioning</em> and
+is supported by the platform (discussed further below).</p>
+<h2 id="stateless-partitioning">Stateless Partitioning</h2>
+<p>When an operator has no state (computed data that needs to persist across streaming
+window boundaries) dynamic paritioning is relatively simple -- the newly created
+partitions simply initialize themselves in the <code>setup</code> and <code>activate</code> callbacks
+and proceed to process inbound tuple flows. This is the case with static partitioning
+as well since there is no state to worry about when an application is starting.</p>
+<p>However, when partitioning dynamically (at runtime), if the operator replicas have some
+state (for example, a set of files that have already been processed), this state needs
+to be redistributed across the new set of partitions in some application-specific way in
+order to preserve proper semantics (for example, that file set needs to be replicated
+in all of the new partitions to ensure that those files are not reprocessed).
+Partitioning that ignores operator state is called <em>stateless partitioning</em>.</p>
+<h2 id="triggering-and-configuring-parititioning">Triggering and Configuring Parititioning</h2>
+<p>Partitioning is typically achieved in one of two ways:</p>
+<ol>
+<li>Create a custom partitioner class (or use one of the predefined ones) that implements
+   the <code>Partitioner</code> interface and specify it in the configuration file as the <code>PARTITIONER</code>
+   attribute of the operator.</li>
+<li>Implement the <code>Partitioner</code> interface in the operator itself and provide a suitable
+   <code>definePartitions</code> method with appropriate logic to create and return the new set of
+   partitions. If dynamic partitioning is desired, a closely related interface (discussed
+   below) <code>StatsListener</code> must also be implemented.</li>
+</ol>
+<p>We've already mentioned above the use of the <code>@OperatorAnnotation(partitionable = false)</code>
+annotation to disable partitioning. In the absence of this annotation, one of the simplest
+ways of triggering stateless partitioning is to use the the <code>StatelessPartitioner</code> class
+that is provided in Apex (core) by adding the following fragment to the configuration file
+(no code changes are needed):</p>
+<pre><code class="xml">&lt;property&gt;
+  &lt;name&gt;dt.application.{appName}.operator.{opName}.attr.PARTITIONER&lt;/name&gt;
+  &lt;value&gt;com.datatorrent.common.partitioner.StatelessPartitioner:2&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+
+<p>Here, <em>{appName}</em> and <em>{opName}</em> are the appropriate application and operator names) and
+the number after the colon specifies the number of desired partitions.</p>
+<p>This partitioner, as the name implies, ignores state and is intended for static partitioning.
+A couple of other stateless partitioners are provided in the Malhar library and are
+discussed in a later section below.</p>
+<p>Setting the parallel partition flag on the input port of an operator is done via a
+snippet in the configuration file:</p>
+<pre><code class="xml">&lt;property&gt;
+  &lt;name&gt;dt.application.{appName}.operator.{opName}.inputport.{portName}.attr.PARTITION_PARALLEL&lt;/name&gt;
+  &lt;value&gt;true&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+
+<p>When implementing a custom partitioner or implementing the interface directly as part of
+the operator, there are two methods that need to be implemented: The first is the
+<code>partitioned</code> method that is invoked by the platform to inform the operator that some
+change to the partitioning has occurred:</p>
+<pre><code class="java">void partitioned(Map&lt;Integer, Partition&lt;T&gt;&gt; partitions);
+</code></pre>
+
+<p>The argument is the new set of partitions. Often, an empty implementation or one that
+emits suitable log messages suffices. The more important one is the <code>definePartitions</code>
+method:</p>
+<pre><code class="java">Collection&lt;Partition&lt;T&gt;&gt; definePartitions(Collection&lt;Partition&lt;T&gt;&gt; partitions,
+                                          PartitioningContext context);
+</code></pre>
+
+<p>The argument is the current collection of partitions and the method should return
+the desired new collection. Any number of existing partitions may be added to the
+returned collection. Existing partitions that are not in the result will be killed;
+those that are in both will be left untouched. New ones will be created and deployed.</p>
+<p>This method is invoked by the platform at application launch to determine the
+initial set of partitions; thereafter, it will be invoked whenever the response
+of the <code>processStats</code> method of <code>StatsListener</code> returns with the <code>repartitionRequired</code>
+field set to true.</p>
+<p>A typical implementation skeleton of this method for the <code>MyOperator</code> class might
+look like this:</p>
+<pre><code class="java">Collection&lt;Partition&lt;MyOperator&gt;&gt;
+definePartitions(Collection&lt;Partition&lt;MyOperator&gt;&gt; existing,
+                 PartitioningContext context)
+{
+    // collect state (if any) from existing partitions
+    int newPartitionCount = ...;
+    Collection&lt;Partition&lt;MyOperator&lt;T&gt;&gt;&gt; result = new ArrayList&lt;&gt;(newPartitionCount);
+    for (int i = 0; i &lt; newPartitionCount; ++i) {
+        MyOperator op = new MyOperator();
+        // initialize op suitably
+        result.add(op);
+    }
+    return result;
+}
+</code></pre>
+
+<h2 id="statslistener">StatsListener</h2>
+<p>The <code>StatsListener</code> interface can, analogously to the <code>Partitioner</code> interface, either
+be implemented by a standalone class or by the operator itself; its only method is:</p>
+<pre><code class="java">Response processStats(BatchedOperatorStats stats);
+</code></pre>
+
+<p>Within this method, which is invoked at regular intervals by the platform (currently once
+per second), various operators metrics are made available; based on these metrics, the
+method should return a <code>Response</code> object with the <code>repartitionRequired</code> field set to true
+if a repartition is required, false otherwise. For example, here is a simple
+implementation of this method with the actual test stubbed out:</p>
+<pre><code class="java">@Override
+public Response processStats(BatchedOperatorStats batchedOperatorStats)
+{
+  Response res = new Response();
+  res.repartitionRequired = false;
+  if ( ...use appropriate test... ) {
+    LOG.info(&quot;processStats: repartitioning&quot;);
+    res.repartitionRequired = true;
+  }
+  return res;
+}
+</code></pre>
+
+<p>The platform will then invoke the <code>definePartitions</code> method of the operator (or its
+partitioner) if the <code>repartitionRequired</code> field is true.</p>
+<p>Example operators that implement both <code>StatsListener</code> and <code>Partitioner</code> interfaces are
+<code>AbstractFileInputOperator</code> and <code>AbstractKafkaInputOperator</code>.</p>
+<h2 id="stream-codecs">Stream Codecs</h2>
+<p>When a downstream operator is partitioned, tuples leaving the output port of the upstream
+operator are distributed to the partitions based on their hashCode. If the distribution
+needs to be done based on a specific field (or combination of fields) of the tuple, a
+custom <code>StreamCodec</code> needs to be created and attached as the value of the <code>STREAM_CODEC</code>
+attribute of the input port of the partitioned operator.</p>
+<p>An example scenario that needs a custom StreamCodec is the following: Suppose
+we have 2 downstream partitions and our tuples are transaction records that contain a
+country code. Suppose further that roughly half the transactions occur in one country
+and the rest are distributed across a number of other countries. A custom StreamCodec
+would allow us to funnel each of these 2 groups of tuples to different partitions,
+thus evenly distributing the load.</p>
+<p>The StreamCodec interface has 3 methods, 2 for customizing the serialization and
+deserialization and the third for customizing tuple delivery:</p>
+<pre><code class="java">Object fromByteArray(Slice fragment);    // deserialize
+Slice toByteArray(T o);                  // serialize
+int getPartition(T o);                   // determine destination partitions
+</code></pre>
+
+<p>For convenience, the platform provides a concrete class <code>KryoSerializableStreamCodec</code>
+which provides implementations of all 3 methods (but the implementation of the
+<code>getPartition</code> method is the same as the default -- it just uses the tuple hashCode),
+so the easiest way to create a custom codec is to extend this class. For the example
+outlined above, the StreamCodec definition might look like this (assuming the high
+frequency country code is "XYZ"):</p>
+<pre><code class="java">public class CountryCodec extends KryoSerializableStreamCodec&lt;Transaction&gt; {
+    @Override
+    public int getPartition(Transaction tuple) {
+      String country = tuple.getCountryCode();
+      return (&quot;XYZ&quot;.equals(country) ? 0 : 1;
+    }
+}
+</code></pre>
+
+<p>This codec would be used in the <code>populateDAG</code> method as follows:</p>
+<pre><code class="java">MyOperator oper  = dag.addOperator(&quot;downstream&quot;, new MyOperator());
+CountryCodec codec = new CountryCodec();
+dag.setInputPortAttribute(oper.in, PortContext.STREAM_CODEC, codec);
+// assuming the input port in MyOperator is called &quot;in&quot;
+</code></pre>
+
+<h2 id="partition-keys">Partition Keys</h2>
+<p>TBD</p>
+<h2 id="built-in-partitioners">Built-in Partitioners</h2>
+<p>In addition to the <code>StatelessPartitioner</code> already mentioned, the Malhar library provides
+a couple of other stateless partitioners:</p>
+<p><code>StatsAwareStatelessPartitioner</code> : The is an abstract class that requires a concrete
+implementation of the <code>getLoad</code> abstract method which should examine current metrics
+and, for each partition, return -1, 0 or 1 according as the partition is underloaded,
+properly loaded or overloaded. Based on these results, overloaded partitions will be
+split and underloaded partitions will be combined. A concrete extension is provided
+by the partitioner discussed next.</p>
+<p><code>StatelessThroughputBasedPartitioner</code> : This partitioner is an extension of the
+<code>StatsAwareStatelessPartitioner</code> mentioned above. It can be configured so that it
+increases or decreases the number of partitions as appropriate to 
+ensure that the throughput is between a defined range. It also implements the
+<code>StatsListener</code> interface. Currently, it must be configured from Java code in the <code>populateDAG</code>
+method of the <code>StreamingApplication</code> interface, for example:</p>
+<pre><code class="java">MyOperator op = dag.addOperator(&quot;myop&quot;, MyOperator.class);
+StatelessThroughputBasedPartitioner&lt;MyOperator&gt; p = new StatelessThroughputBasedPartitioner&lt;&gt;();
+p.setCooldownMillis(10000);
+p.setMaximumEvents(30000);
+p.setMinimumEvents(10000);
+dag.setAttribute(op, OperatorContext.STATS_LISTENERS, Arrays.asList(new StatsListener[]{p}));
+dag.setAttribute(op, OperatorContext.PARTITIONER, p);
+</code></pre>
+
+<p>This code will dynamically repartition <code>MyOperator</code> based on throughput (a moving average
+of the number of tuples moving through the operator per second). If the throughput of an
+individual operator partition exceeds 30000 it will be split into two or more partitions;
+if it falls below 10000 for a set of adjacent partitions, that set will be combined into a
+single partition.  The CooldownMillis parameter of 10000 milliseconds is used as the
+observation interval for throughput computation.</p>
+<h2 id="unifiers">Unifiers</h2>
+<p>As mentioned earlier, in the presence of partitioning, a unifier is required to combine
+the the partial results computed by the individual partitions to form the final result.</p>
+<p>For example, suppose an operator is processing numbers and computes the sum of all the
+values seen in a window. If it is partitioned into N replicas, each replica is computing
+a partial sum and we would need a unifier that computes the overall sum from
+these N partial sums. A sample application that shows how to define and use a unifier is
+available <a href="https://github.com/DataTorrent/examples/tree/master/tutorials/unifiers">here</a>.</p>
+<p>A unifier for an operator is provided by a suitable override of the <code>getUnifier()</code> method
+of the output port, for example:</p>
+<pre><code class="java">public final transient DefaultOutputPort&lt;HighLow&lt;Integer&gt;&gt; out
+  = new DefaultOutputPort&lt;HighLow&lt;Integer&gt;&gt;() {
+    @Override
+    public Unifier&lt;HighLow&lt;Integer&gt;&gt; getUnifier() {
+        return new UnifierRange&lt;Integer&gt;()
+    }
+}
+</code></pre>
+
+<p>A unifier is an instance of a class that implements the <code>Unifier</code> interface; that
+interface extends the <code>Operator</code> interface and adds just one additional method:</p>
+<pre><code class="java">void process(T tuple);
+</code></pre>
+
+<p>A unifier therefore is also an operator and so all the usual callback methods such as
+<code>beginWindow</code> and <code>endWindow</code> are available to override. It differs from a normal operator
+in a couple of ways:</p>
+<ol>
+<li>It is not explicitly created as part of the DAG in the <code>populateDAG</code> method.</li>
+<li>It should define no input ports -- an input port will be automatically supplied by the
+   platform and connected to the appropriate output ports of the upstream partitions.</li>
+<li>It must define an output port which will be automatically connected to the input port
+   of the downstream operator.</li>
+<li>It should handle incoming tuples in the <code>process</code> method where it can immediately
+   emit appropriate tuples on the output port or aggregate the information in local
+   variables for emitting later (in the <code>beginWindow</code> or <code>endWindow</code> callbacks for
+   example).</li>
+</ol>
+<p>If no unifier is supplied for a partitioned operator, the platform will supply a default
+pass-through unifier.</p>
+<p>When the number of partitions is large and the unifier involves non-trivial computations
+there is a risk that it can become a bottleneck; in such cases, the <code>UNIFIER_LIMIT</code>
+attribute can be set on the appropriate output port. The platform will then automatically
+generate the required number of parallel unifiers, cascading into multiple levels if
+necessary, to ensure that the number of input streams at each unifier does not exceed
+this limit.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../app_data_framework/" class="btn btn-neutral float-right" title="App Data Framework">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../operators/snapshot_server/" class="btn btn-neutral" title="Snapshot Server"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  <div class="footer">Copyright &#169; 2018 DataTorrent</div>
+  <div class="footer">Apache, Hadoop, Apex, Yarn, HDFS and the Hadoop elephant and Apache project logos are either registered trademarks or trademarks of the Apache Software Foundation in the United States or other countries.</div>
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="version-select">
+    <div class="version-select__bar">
+      v: <span class="version-select__bar-version"></span>
+      <i class="fa fa-caret-down"></i>
+    </div>
+    <div class="version-select__menu">
+      <dl class="version-select__menu-versions">
+        <dt>Versions</dt>
+        <dd><a class="version-select__menu-versions-latest version" href="#">latest</a></dd>
+        <!-- append versions here -->
+      </dl>
+    </div>
+  </div>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/require.js" defer></script>
+      <script src="../search/search.js" defer></script>
+
+</body>
+</html>
