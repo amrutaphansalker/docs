@@ -1,18 +1,19 @@
 DataTorrent RTS Overview
 ================================================================================
 
-DataTorrent RTS is an enterprise product built around Apache Apex, a Hadoop-native unified stream and batch processing platform.  DataTorrent RTS combines Apache Apex engine with a set of enterprise-grade management, monitoring, development, and visualization tools.  
-
-![DataTorrent RTS Architecture](images/rts/DT_Architecture_image.png)
-
-DataTorrent RTS platform enables creation and management of real-time big data applications in a way that is
-
-* **highly scalable and performant** - millions of events per second per node with linear scalability
-* **fault tolerant** - automatic recovery with no data or state loss
-* **Hadoop native** - installs in seconds and works with all existing Hadoop distributions
-* **easily developed** - write and re-use generic Java code
-* **easily integrated** - customizable connectors to file, database, and messaging systems
-* **easily operable** - full suite of management, monitoring, development, and visualization tools
-
-
-The system is capable of processing billions of events per second, while automatically recovering without any state or data loss when individual nodes fail.  A simple API enables developers to write new and re-use existing generic Java code, lowering the expertise needed to write big data applications.  A library of existing demos and re-usable operators allows applications to be developed quickly.  Native Hadoop support allows DataTorrent RTS to be installed in seconds on any existing Hadoop cluster.  Application administration can be done from a browser with dtManage, a full suite of management, monitoring, and visualization tools. Application data can be easily visualized with [dtDashboard](dtdashboard.md) real-time data visualizations.
+# DataTorrent RTS
+(Overview about DataTorrent RTS)
+DataTorrent RTS enables customers to launch big data products using open source software with quick time to value and operate these products within a viable total cost of ownership. Using RTS, customers are able to achieve critical business outcomes successfully. 
+RTS consists of the following:
+## Fast Big Data Stack
+RTS leverages open source creativity and innovation by integrating and hardening the best-of-breed technologies that enable customers to quickly develop enterprise quality applications.
+## APOXI
+APOXI is the RTS framework that helps develop and operate big data products by stitching together data services. APOXI includes all the glue logic, registries, metrics platform, and application backplane required to get to production quickly.
+## Heterogeneous Environments
+All artifacts available in DataTorrent are hardened and certified for both Amazon and Azure. Your application will work seamlessly on-prem as well as cloud with minimal or no changes. Software includes connectors to all major Amazon and Azure technologies.
+## AppFactory
+RTS customers have access to applications factory that consists of certified, hardened, and reusable applications, data services, and components for quick development and easy operations of big data products.
+## RTS Tools
+These include Easy-to-use and configure real-time and historical dashboards, management and monitoring UI, automated fault-tolerance, linear scale, security, deployment scripts etc.
+# Workflow in DT RTS
+(An  highlevel overview about how RTS functions. How all the above items fit together.)
