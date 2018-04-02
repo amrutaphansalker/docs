@@ -4,7 +4,7 @@ Operator Troubleshooting Guide
 
 # What to do when downstream operators are slower than the input operators?
 
- What must be done if an Operator gets killed after every 60 secs (Timeout issue).
+# What must be done if an Operator gets killed after every 60 secs (Timeout issue)?.
 
 # How to handle exceptions thrown from the operators?
 
@@ -59,7 +59,7 @@ Operator memory for an operator can be configured in one of the following two wa
 ```
 This will set 2GB as the size of all the operators in the given application.
 
-* Set a specific value for an operator. In the following example, the operator op is set with 8 GB memory.
+* Set a specific value for an operator. In the following example, the operator **Op** is set with 8 GB memory.
 ```<property>
   <name>dt.application.<APPLICATION_NAME>.operator.Op.attr.MEMORY_MB</name>
   <value>8192</value>
@@ -79,7 +79,7 @@ There is a buffer server in each container that hosts an operator with an output
 ```
 This sets 128 MB as the buffer memory for all the output ports of all the operators.
 
-* Set a specific value for a specific output port of a specific operator.  The following example sets 1 GB as buffer memory for output port p of an operator Op:
+* Set a specific value for a specific output port of a specific operator.  The following example sets 1 GB as buffer memory for output port **p** of an operator **Op**:
 ```<property>
   <name>dt.application.<APPLICATION_NAME>.operator.Op.port.p.attr.BUFFER_MEMORY_MB</name>
   <value>1024</value>
@@ -102,19 +102,23 @@ Thread and container local streams do not use a stream codec, hence tuples don't
 
 There is no guaranteed way to uncover serialization issues in your code. An operator may emit a problematic tuple only in very rare and hard to reproduce conditions while testing. Kryo deserialization problem in an operator will not be uncovered until the recovery time, and at that point it is most likely too late. It is recommended to unit test an operator's ability to restore itself properly similar to this [example](https://github.com/apache/apex-malhar/blob/master/library/src/test/java/com/datatorrent/lib/io/fs/AbstractFileOutputOperatorTest.java).
 To exercise tuple serialization, run your application in [local mode](http://apex.apache.org/docs/apex/application_development/#local-mode) that could uncover many tuple serialization problems. Use the [ApexCLI](http://apex.apache.org/docs/apex/apex_cli/) to launch your application with the -local option to run it in local mode. The application will fail at a point when the platform is unable to serialize or deserialize a tuple,and the relevant exception will be logged on the console or a log file as described in the [Kryo exception](http://docs.datatorrent.com/troubleshooting/#application-throwing-following-kryo-exception) section. Check out that section further for hints about troubleshooting serialization issues.
-Transient members
+**Transient members**
 Certain data members of an operator do not need to be serialized or deserialized during deployment or checkpointing/recovery because they are [transient](http://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1.3) in nature and do not represent stateful data. Developers should judiciously use the [transient](http://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1.3) keyword for declaring such non-stateful members of operators (or members of objects that are indirectly members of operators) so that the platform skips serialization of such members and serialization/deserialization errors are minimized. Transient members are further described in the context of the operator life-cycle [here](http://apex.apache.org/docs/apex/operator_development/#setup-call). Typical examples of transient data members are database or network connection objects which need to be initialized before they are used in a process, so they are never persisted across process invocations.
 
 # How to check the killed operator’s state?
 
-On dtconsole, click the retrieve killed button of the container List. Containers List widget’s default location is on the physical dashboard. Then select the appropriate container of the killed operator and check the state.
+On dtconsole, click the **retrieve killed** button of the container List. Containers List widget’s default location is on the **physical** dashboard. Then select the appropriate container of the killed operator and check the state.
 
 # How to handle high ingestion Rate in OAS?
 
 Usually, OAS consumes the Kafka topic data as soon as it is available from upstream. However, if it cannot cope with the incoming rate, there can be failures in the Input operator. To avoid such issues, the following approaches are suggested:
- OlapParser Operator partitioning
+
+* **OlapParser Operator partitioning**
+
 OlapParser operator can be partitioned, if the ingestion rate is very high. For example, for creating 4 partitions, the property dt.operator.OlapParser.attr.PARTITIONER can be used with value as com.datatorrent.common.partitioner.StatelessPartitioner:4
- Increase Retention period for kafka topic
+
+* **Increase Retention period for kafka topic**
 If OAS is overloaded and not processing the data at the same rate as upstream, the retention period for the kafka topic can be increased. This gives sufficient time for OAS to process all the topic data.
- Specify 'auto.offset.reset' consumer property
+
+* **Specify 'auto.offset.reset' consumer property**
 There can be cases where OAS is unable to keep pace with the upstream and the older data in Kafka topic gets expired because of the retention policy that is set before getting processed by OAS. In such cases the OAS Input operator may fail. To avoid this failure, the consumer property dt.operator.Input.prop.consumerProps(auto.offset.reset) can be set in OAS with value as earliest. With this property, in case of older topic data expiry, the offset used for reading the data is earliestthat is whichever oldest offset that is currently available with the topic. This avoids the Input operator failure but also involves some loss of data. Caution: This is not the recommended approach, as it may result in data loss without any notification.
