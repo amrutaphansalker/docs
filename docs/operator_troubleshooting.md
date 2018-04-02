@@ -91,9 +91,11 @@ Default value for this attribute is 512 MB
 
 An Apex application needs to satisfy serializability requirements on operators and tuples as follows:
 * **Operators**
+
 After an application is launched, the DAG is serialized using a combination of [Java Serialization](https://docs.oracle.com/javase/8/docs/platform/serialization/spec/serialTOC.html) and [Kryo](https://github.com/EsotericSoftware/kryo/blob/master/README.md) and then the DAG is transferred over the network from the launching node to the application master node.
 Checkpointing also involves serializing and persisting an operator state to a store and deserializing from the store in case of recovery. The platform uses Kryo serialization in this case. Kryo imposes additional requirements on an operator Java class to be deserializable. For more details check out this [page](https://github.com/EsotericSoftware/kryo/blob/master/README.md#object-creation).
 * **Tuples**
+
 Tuples are serialized (and deserialized) according to the specified stream codec when transmitted between Yarn containers. When no stream codec is specified, Apex uses the default stream codec that relies on the [Kryo](https://github.com/EsotericSoftware/kryo/blob/master/README.md) serialization library to serialize and deserialize tuples. A custom stream codec can be specified to use a different serialization framework.
 
 Thread and container local streams do not use a stream codec, hence tuples don't need to be serializable in such cases.
@@ -118,7 +120,9 @@ Usually, OAS consumes the Kafka topic data as soon as it is available from upstr
 OlapParser operator can be partitioned, if the ingestion rate is very high. For example, for creating 4 partitions, the property dt.operator.OlapParser.attr.PARTITIONER can be used with value as com.datatorrent.common.partitioner.StatelessPartitioner:4
 
 * **Increase Retention period for kafka topic**
+
 If OAS is overloaded and not processing the data at the same rate as upstream, the retention period for the kafka topic can be increased. This gives sufficient time for OAS to process all the topic data.
 
 * **Specify 'auto.offset.reset' consumer property**
+
 There can be cases where OAS is unable to keep pace with the upstream and the older data in Kafka topic gets expired because of the retention policy that is set before getting processed by OAS. In such cases the OAS Input operator may fail. To avoid this failure, the consumer property dt.operator.Input.prop.consumerProps(auto.offset.reset) can be set in OAS with value as earliest. With this property, in case of older topic data expiry, the offset used for reading the data is earliestthat is whichever oldest offset that is currently available with the topic. This avoids the Input operator failure but also involves some loss of data. Caution: This is not the recommended approach, as it may result in data loss without any notification.
