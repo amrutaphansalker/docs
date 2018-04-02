@@ -2,53 +2,53 @@
 Operator Troubleshooting Guide
 ================================================================================
 
-#### What to do when downstream operators are slower than the input operators?
+# What to do when downstream operators are slower than the input operators?
 
-#### What must be done if an Operator gets killed after every 60 secs (Timeout issue).
+ What must be done if an Operator gets killed after every 60 secs (Timeout issue).
 
-#### How to handle exceptions thrown from the operators?
+# How to handle exceptions thrown from the operators?
 
-####  How to create new tuples for every emit?<not clear>
+#  How to create new tuples for every emit?<not clear>
 
-#### How to use multiple-threads in an operator?
+# How to use multiple-threads in an operator?
 
-#### How to debug slow operators?
+# How to debug slow operators?
 
-#### How to debug blocked operators?
+# How to debug blocked operators?
 
-####  Why do I get this exception - "Kryo not deserializable"?
+#  Why do I get this exception - "Kryo not deserializable"?
 <Please also see, How to troubleshoot Serialization issues?>
 
-####  How to change the operator log level?
+#  How to change the operator log level?
 
-####  How to handle idle time in the operator?
+#  How to handle idle time in the operator?
 <Is this a troubleshoot item?>
 
-#### What are the settings required in YARN and Apex when I get the "Out of memory" error?
+# What are the settings required in YARN and Apex when I get the "Out of memory" error?
 
-#### How do I find the operator checkpoint size?
+# How do I find the operator checkpoint size?
 
-#### Processing mode Attributes in the Operators
+# Processing mode Attributes in the Operators
 <Is this a troubleshoot item?>
 
-#### Useful Operator Attributes
+# Useful Operator Attributes
 <Please elaborate>
 
-#### How to locate the operator that is a bottleneck?
+# How to locate the operator that is a bottleneck?
 <can this be part of FAQ>
 
-#### How to handle bad data that comes in from the port?
+# How to handle bad data that comes in from the port?
 
-#### How to get custom metrics from an operator?
+# How to get custom metrics from an operator?
 <can this be part of FAQ>
 
-#### How to control CPU allocated to the operator?
+# How to control CPU allocated to the operator?
 <can this be part of FAQ>
 
-#### Can an operator have an optional port?
+# Can an operator have an optional port?
 <can this be part of FAQ>
 
-#### How to configure Operator Memory?
+# How to configure Operator Memory?
 
 Operator memory for an operator can be configured in one of the following two ways:
 * Use the same default values for all the operators:
@@ -67,7 +67,7 @@ This will set 2GB as the size of all the operators in the given application.
 ```
 The memory required by an operator should be based on the maximum data that the operator will store in-memory for all the fields: both transient and non-transient. Default value for this attribute is 1024 MB.
 
-#### How to configure Buffer Server memory?
+# How to configure Buffer Server memory?
 
 There is a buffer server in each container that hosts an operator with an output port. This output port is connected to an input port outside the container. The buffer server memory of a container can be controlled by BUFFER_MEMORY_MB. This can be configured in any of the following ways:
 
@@ -87,7 +87,7 @@ This sets 128 MB as the buffer memory for all the output ports of all the operat
 ```
 Default value for this attribute is 512 MB
 
-#### How to meet serializability requirements for operators and tuples in an Apex application?
+# How to meet serializability requirements for operators and tuples in an Apex application?
 
 An Apex application needs to satisfy serializability requirements on operators and tuples as follows:
 * **Operators**
@@ -98,18 +98,18 @@ Tuples are serialized (and deserialized) according to the specified stream codec
 
 Thread and container local streams do not use a stream codec, hence tuples don't need to be serializable in such cases.
 
-#### How to troubleshoot Serialization issues?
+# How to troubleshoot Serialization issues?
 
 There is no guaranteed way to uncover serialization issues in your code. An operator may emit a problematic tuple only in very rare and hard to reproduce conditions while testing. Kryo deserialization problem in an operator will not be uncovered until the recovery time, and at that point it is most likely too late. It is recommended to unit test an operator's ability to restore itself properly similar to this [example](https://github.com/apache/apex-malhar/blob/master/library/src/test/java/com/datatorrent/lib/io/fs/AbstractFileOutputOperatorTest.java).
 To exercise tuple serialization, run your application in [local mode](http://apex.apache.org/docs/apex/application_development/#local-mode) that could uncover many tuple serialization problems. Use the [ApexCLI](http://apex.apache.org/docs/apex/apex_cli/) to launch your application with the -local option to run it in local mode. The application will fail at a point when the platform is unable to serialize or deserialize a tuple,and the relevant exception will be logged on the console or a log file as described in the [Kryo exception](http://docs.datatorrent.com/troubleshooting/#application-throwing-following-kryo-exception) section. Check out that section further for hints about troubleshooting serialization issues.
 Transient members
 Certain data members of an operator do not need to be serialized or deserialized during deployment or checkpointing/recovery because they are [transient](http://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1.3) in nature and do not represent stateful data. Developers should judiciously use the [transient](http://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1.3) keyword for declaring such non-stateful members of operators (or members of objects that are indirectly members of operators) so that the platform skips serialization of such members and serialization/deserialization errors are minimized. Transient members are further described in the context of the operator life-cycle [here](http://apex.apache.org/docs/apex/operator_development/#setup-call). Typical examples of transient data members are database or network connection objects which need to be initialized before they are used in a process, so they are never persisted across process invocations.
 
-#### How to check the killed operator’s state?
+# How to check the killed operator’s state?
 
 On dtconsole, click the retrieve killed button of the container List. Containers List widget’s default location is on the physical dashboard. Then select the appropriate container of the killed operator and check the state.
 
-#### How to handle high ingestion Rate in OAS?
+# How to handle high ingestion Rate in OAS?
 
 Usually, OAS consumes the Kafka topic data as soon as it is available from upstream. However, if it cannot cope with the incoming rate, there can be failures in the Input operator. To avoid such issues, the following approaches are suggested:
  OlapParser Operator partitioning
