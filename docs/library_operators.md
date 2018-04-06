@@ -32,10 +32,10 @@ The following operators, classified into four groups, are available:
 | JMS Output Operator | Output  | [Guide](http://apex.apache.org/docs/malhar/operators/jmsMultiPortOutputOperator/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/jms/AbstractJMSOutputOperator.html) |
 | Json Formatter | Process  | [Guide](http://apex.apache.org/docs/malhar/operators/jsonFormatter/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/formatter/JsonFormatter.html) |
 | Json Parser | Process  | [Guide](http://apex.apache.org/docs/malhar/operators/jsonParser/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/parser/JsonParser.html) |
-| Kafka Input Operator
-(Version 0.8) |  Input | [Guide](operators/kafkaInputOperator.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kafka/KafkaSinglePortStringInputOperator.html) |
-| Kafka Input Operator
-(Version 0.9) |   |   | [Java Docs]() |
+| Kafka Input Operator (Version 0.8)
+ |  Input | [Guide](operators/kafkaInputOperator.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kafka/KafkaSinglePortStringInputOperator.html) |
+| Kafka Input Operator (Version 0.9)
+ |   |   |  |
 | Kafka Output Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kafka/AbstractKafkaOutputOperator.html) |
 | Kinesis Input Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kinesis/AbstractKinesisInputOperator.html) |
 | Kinesis Output Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kinesis/AbstractKinesisOutputOperator.html) |
@@ -44,19 +44,19 @@ The following operators, classified into four groups, are available:
 | Pravega Input |   |   | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/pravega/AbstractPravegaInputOperator.html) |
 | RabbitMQ Input Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/rabbitmq/AbstractRabbitMQInputOperator.html) |
 | RabbitMQ Output Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/rabbitmq/AbstractRabbitMQOutputOperator.html) |
-| Reconciler plugin |   |   | [Java Docs]() |
-| Regex splitter |   |   | [Java Docs]() |
+| Reconciler plugin |   |   |  |
+| Regex splitter |   |   |  |
 | S3 Input Operator (Block reading) |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/fs/S3InputModule.html) |
-| S3 Input Operator (Line reading) |   |   | [Java Docs]() |
-| S3 Output Operator (block) |   |   | [Java Docs]() |
-| S3 Output Operator (line) |   |   | [Java Docs]() |
+| S3 Input Operator (Line reading) |   |   |  |
+| S3 Output Operator (block) |   |   |  |
+| S3 Output Operator (line) |   |   |  |
 | SMTP output |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/SmtpOutputOperator.html) |
-| Solace |   |   | [Java Docs]() |
+| Solace |   |   |  |
 | Solr Output |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/solr/AbstractSolrOutputOperator.html) |
-| SQS Input |   |   | [Java Docs]() |
-| Stateless Transform | Process  |   | [Java Docs]() |
+| SQS Input |   |   |  |
+| Stateless Transform | Process  |   |  |
 | TcpInputOperator | Input  | [Guide](operators/tcpinputoperator.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/web/TcpInputOperator.html) |
-| WAL plugin |   |   | [Java Docs]() |
+| WAL plugin |   |   |  |
 | Web - AbstractHttpServerOperator | Input/Output  | [Guide](operators/abstracthttpserver.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/web/AbstractHttpServerOperator.html) |
 | Web - AbstractWebSocketServlet |   | [Guide](operators/abstracthttpserver.md) | [Java Docs]( https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/web/AbstractWebSocketServlet.html) |
 | xml Formatter |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/formatter/XmlFormatter.html) |
