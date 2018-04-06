@@ -26,7 +26,7 @@ The following operators, classified into four groups, are available:
 | HBase Output |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/couchbase/AbstractCouchBaseOutputOperator.html) |
 | Hive Output Operator |   |   |   |
 | JDBC Enrichment |   |   |   |
-| JDBC Input Operator |  InpuProcesst | [Guide](https://github.com/apache/apex-malhar/blob/master/docs/operators/jdbcPollInputOperator.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/db/jdbc/AbstractJdbcInputOperator.html) |
+| JDBC Input Operator |  Input | [Guide](https://github.com/apache/apex-malhar/blob/master/docs/operators/jdbcPollInputOperator.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/db/jdbc/AbstractJdbcInputOperator.html) |
 | JDBC output | Output  |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/db/jdbc/AbstractJdbcPOJOOutputOperator.html) |
 | JMS Input Operator |  Input | [Guide](http://apex.apache.org/docs/malhar/operators/jmsInputOperator/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/jms/AbstractJMSInputOperator.html) |
 | JMS Output Operator | Output  | [Guide](http://apex.apache.org/docs/malhar/operators/jmsMultiPortOutputOperator/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/jms/AbstractJMSOutputOperator.html) |
