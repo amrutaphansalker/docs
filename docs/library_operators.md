@@ -11,14 +11,14 @@ The following operators, classified into four groups, are available:
 | Azure Event Hub |   | [Guide](operators/eventhuboutput.md) | [Java Docs]( https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/azure/eventhub/package-summary.html)
 | Cassandra Output |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/cassandra/CassandraPOJOOutputOperator.html) |
 | CSV Formatter |   | [Guide](http://apex.apache.org/docs/malhar/operators/csvformatter/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/formatter/CsvFormatter.html) |
-| CSV Parser |   | [Guide](http://apex.apache.org/docs/malhar/operators/csvParserOperator/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/parser/AbstractCsvParser.html) |
-| Deduper (Malhar) |   | [Guide](operators/deduper.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/org/apache/apex/malhar/lib/dedup/AbstractDeduper.html) |
-| Drools |   | [Guide](operators/drools\_operator.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/drools/operator/DroolsOperator.html) |
-| Elastic Search Output |   | [Guide](operators/elasticsearch.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/elasticsearch/AbstractElasticSearchOutputOperator.html) |
+| CSV Parser |  Process | [Guide](http://apex.apache.org/docs/malhar/operators/csvParserOperator/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/parser/AbstractCsvParser.html) |
+| Deduper |  Process | [Guide](operators/deduper.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/org/apache/apex/malhar/lib/dedup/AbstractDeduper.html) |
+| Drools |  Process | [Guide](operators/drools\_operator.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/drools/operator/DroolsOperator.html) |
+| Elastic Search Output | Output  | [Guide](operators/elasticsearch.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/elasticsearch/AbstractElasticSearchOutputOperator.html) |
 | Elastic Search Input |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/elasticsearch/AbstractElasticSearchInputOperator.html) |
 | File Splitter + Block Reader (Block Reading) |   |   | [Java Docs – File Splitter]( https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/fs/AbstractFileSplitter.html), [Java Docs – Block Reader]( https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/block/AbstractBlockReader.html) |
 | File Splitter + Block Reader (Line Reading) |   |   |   |
-| Filter |   | [Guide](http://apex.apache.org/docs/malhar/operators/filter/) | [Java Docs]( https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/util/JavaScriptFilterOperator.html) |
+| Filter | Process  | [Guide](http://apex.apache.org/docs/malhar/operators/filter/) | [Java Docs]( https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/util/JavaScriptFilterOperator.html) |
 | Flume input |   |   |   |
 | FS Enrichment |   |   | [Java Docs]( https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/operators/fs/RepeatableLineByLineReader.html) |
 | FS Output Operator |   |   |   |
@@ -26,21 +26,21 @@ The following operators, classified into four groups, are available:
 | HBase Output |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/couchbase/AbstractCouchBaseOutputOperator.html) |
 | Hive Output Operator |   |   |   |
 | JDBC Enrichment |   |   |   |
-| JDBC Input Operator |   | [Guide](https://github.com/apache/apex-malhar/blob/master/docs/operators/jdbcPollInputOperator.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/db/jdbc/AbstractJdbcInputOperator.html) |
-| JDBC output |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/db/jdbc/AbstractJdbcPOJOOutputOperator.html) |
-| JMS Input Operator |   | [Guide](http://apex.apache.org/docs/malhar/operators/jmsInputOperator/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/jms/AbstractJMSInputOperator.html) |
-| JMS Output Operator |   | [Guide](http://apex.apache.org/docs/malhar/operators/jmsMultiPortOutputOperator/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/jms/AbstractJMSOutputOperator.html) |
-| Json Formatter |   | [Guide](http://apex.apache.org/docs/malhar/operators/jsonFormatter/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/formatter/JsonFormatter.html) |
-| Json Parser |   | [Guide](http://apex.apache.org/docs/malhar/operators/jsonParser/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/parser/JsonParser.html) |
+| JDBC Input Operator |  InpuProcesst | [Guide](https://github.com/apache/apex-malhar/blob/master/docs/operators/jdbcPollInputOperator.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/db/jdbc/AbstractJdbcInputOperator.html) |
+| JDBC output | Output  |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/db/jdbc/AbstractJdbcPOJOOutputOperator.html) |
+| JMS Input Operator |  Input | [Guide](http://apex.apache.org/docs/malhar/operators/jmsInputOperator/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/jms/AbstractJMSInputOperator.html) |
+| JMS Output Operator | Output  | [Guide](http://apex.apache.org/docs/malhar/operators/jmsMultiPortOutputOperator/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/jms/AbstractJMSOutputOperator.html) |
+| Json Formatter | Process  | [Guide](http://apex.apache.org/docs/malhar/operators/jsonFormatter/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/formatter/JsonFormatter.html) |
+| Json Parser | Process  | [Guide](http://apex.apache.org/docs/malhar/operators/jsonParser/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/parser/JsonParser.html) |
 | Kafka Input Operator
-(Version 0.8) |   | [Guide](operators/kafkaInputOperator.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kafka/KafkaSinglePortStringInputOperator.html) |
+(Version 0.8) |  Input | [Guide](operators/kafkaInputOperator.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kafka/KafkaSinglePortStringInputOperator.html) |
 | Kafka Input Operator
 (Version 0.9) |   |   | [Java Docs]() |
 | Kafka Output Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kafka/AbstractKafkaOutputOperator.html) |
 | Kinesis Input Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kinesis/AbstractKinesisInputOperator.html) |
 | Kinesis Output Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kinesis/AbstractKinesisOutputOperator.html) |
 | Parquet Parser |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/parquet/AbstractParquetFileReader.html) |
-| PMML |   |   | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/pmml/operator/AbstractPMMLScoringOperator.html) |
+| PMML | Process  |   | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/pmml/operator/AbstractPMMLScoringOperator.html) |
 | Pravega Input |   |   | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/pravega/AbstractPravegaInputOperator.html) |
 | RabbitMQ Input Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/rabbitmq/AbstractRabbitMQInputOperator.html) |
 | RabbitMQ Output Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/rabbitmq/AbstractRabbitMQOutputOperator.html) |
@@ -54,10 +54,10 @@ The following operators, classified into four groups, are available:
 | Solace |   |   | [Java Docs]() |
 | Solr Output |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/solr/AbstractSolrOutputOperator.html) |
 | SQS Input |   |   | [Java Docs]() |
-| Stateless Transform |   |   | [Java Docs]() |
-| TcpInputOperator |   | [Guide](operators/tcpinputoperator.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/web/TcpInputOperator.html) |
+| Stateless Transform | Process  |   | [Java Docs]() |
+| TcpInputOperator | Input  | [Guide](operators/tcpinputoperator.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/web/TcpInputOperator.html) |
 | WAL plugin |   |   | [Java Docs]() |
-| Web - AbstractHttpServerOperator |   | [Guide](operators/abstracthttpserver.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/web/AbstractHttpServerOperator.html) |
+| Web - AbstractHttpServerOperator | Input/Output  | [Guide](operators/abstracthttpserver.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/web/AbstractHttpServerOperator.html) |
 | Web - AbstractWebSocketServlet |   | [Guide](operators/abstracthttpserver.md) | [Java Docs]( https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/web/AbstractWebSocketServlet.html) |
 | xml Formatter |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/formatter/XmlFormatter.html) |
 | xml Parser |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/parser/XmlParser.html) |
