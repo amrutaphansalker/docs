@@ -32,10 +32,8 @@ The following operators, classified into four groups, are available:
 | JMS Output Operator | Output  | [Guide](http://apex.apache.org/docs/malhar/operators/jmsMultiPortOutputOperator/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/jms/AbstractJMSOutputOperator.html) |
 | Json Formatter | Process  | [Guide](http://apex.apache.org/docs/malhar/operators/jsonFormatter/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/formatter/JsonFormatter.html) |
 | Json Parser | Process  | [Guide](http://apex.apache.org/docs/malhar/operators/jsonParser/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/parser/JsonParser.html) |
-| Kafka Input Operator (Version 0.8)
- |  Input | [Guide](operators/kafkaInputOperator.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kafka/KafkaSinglePortStringInputOperator.html) |
-| Kafka Input Operator (Version 0.9)
- |   |   |  |
+| Kafka Input Operator (Version 0.8) | Input | [Guide](operators/kafkaInputOperator.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kafka/KafkaSinglePortStringInputOperator.html) |
+| Kafka Input Operator (Version 0.9) |   |   |  |
 | Kafka Output Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kafka/AbstractKafkaOutputOperator.html) |
 | Kinesis Input Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kinesis/AbstractKinesisInputOperator.html) |
 | Kinesis Output Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kinesis/AbstractKinesisOutputOperator.html) |
