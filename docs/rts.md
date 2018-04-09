@@ -21,7 +21,7 @@ DataTorrent offers three types of [license subscriptions](Licensing.md) for RTS:
 - **DataTorrent Service Plus®**
 - **DataTorrent Premium Suite®**  
 
-The following table describes the major elements in RTS:
+The following table describes the major elements of RTS:
 
 
 | Item | Description|
@@ -38,7 +38,7 @@ The following table summarizes the main features of RTS Console:
 | Console Feature | Use   |
 | :------------- | :------------- |
 | **AppFactory** | The AppFactory hosts a collection of applications and templates grouped by various industries, that can be imported or downloaded. You can use the applications as they are, or use the templates as a starting point to develop custom applications.  |
-| **Launch** | The Launch page lists all of the Applications and Configurations that are available for launching, as well as offering convenient management features. |
+| **Launch** | The Launch module on the RTS Console lists all the Applications and Configurations that are available for launching along with convenient management features. |
 | **Monitor** | The Monitor module on the RTS Console can be used to monitor, troubleshoot, and manage running application instances. |
 | **Visualize** | The Visualize module on the RTS Console provides dashboards for data visualization. Dashboards are a collection of data visualization widgets for active applications in RTS. You can create custom dashboards, save and reuse these dashboards across multiple applications. |
 | **Develop** | The Develop module on the RTS Console can be used to develop, manage, and view application packages and application configurations |
