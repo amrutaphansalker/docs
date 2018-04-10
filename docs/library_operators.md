@@ -1,107 +1,60 @@
 Operator Library
 ================
 
-The following operators, classified into four groups, are available:
+This table provides the list of available operators and their brief description along with links to the corresponding Operator guides and Java documents.
 
-| **Operator** | **Type** | **Guide** | **Java Docs** |
-| --- | --- | --- | --- |
-| ActiveMQ |   |   | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/activemq/AbstractActiveMQInputOperator.html)|
-| Avro Parser |   |   |   |
-| Azure Blob |   | [Guide](operators/azure\_blob.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/azure/blob/package-summary.html)|
-| Azure Event Hub |   | [Guide](operators/eventhuboutput.md) | [Java Docs]( https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/azure/eventhub/package-summary.html)
-| Cassandra Output |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/cassandra/CassandraPOJOOutputOperator.html) |
-| CSV Formatter |   | [Guide](http://apex.apache.org/docs/malhar/operators/csvformatter/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/formatter/CsvFormatter.html) |
-| CSV Parser |  Process | [Guide](http://apex.apache.org/docs/malhar/operators/csvParserOperator/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/parser/AbstractCsvParser.html) |
-| Deduper |  Process | [Guide](operators/deduper.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/org/apache/apex/malhar/lib/dedup/AbstractDeduper.html) |
-| Drools |  Process | [Guide](operators/drools\_operator.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/drools/operator/DroolsOperator.html) |
-| Elastic Search Output | Output  | [Guide](operators/elasticsearch.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/elasticsearch/AbstractElasticSearchOutputOperator.html) |
-| Elastic Search Input |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/elasticsearch/AbstractElasticSearchInputOperator.html) |
-| File Splitter + Block Reader (Block Reading) |   |   | [Java Docs – File Splitter]( https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/fs/AbstractFileSplitter.html), [Java Docs – Block Reader]( https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/block/AbstractBlockReader.html) |
-| File Splitter + Block Reader (Line Reading) |   |   |   |
-| Filter | Process  | [Guide](http://apex.apache.org/docs/malhar/operators/filter/) | [Java Docs]( https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/util/JavaScriptFilterOperator.html) |
-| Flume input |   |   |   |
-| FS Enrichment |   |   | [Java Docs]( https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/operators/fs/RepeatableLineByLineReader.html) |
-| FS Output Operator |   |   |   |
-| Hbase Input |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/couchbase/AbstractCouchBaseInputOperator.html) |
-| HBase Output |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/couchbase/AbstractCouchBaseOutputOperator.html) |
-| Hive Output Operator |   |   |   |
-| JDBC Enrichment |   |   |   |
-| JDBC Input Operator |  Input | [Guide](https://github.com/apache/apex-malhar/blob/master/docs/operators/jdbcPollInputOperator.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/db/jdbc/AbstractJdbcInputOperator.html) |
-| JDBC output | Output  |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/db/jdbc/AbstractJdbcPOJOOutputOperator.html) |
-| JMS Input Operator |  Input | [Guide](http://apex.apache.org/docs/malhar/operators/jmsInputOperator/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/jms/AbstractJMSInputOperator.html) |
-| JMS Output Operator | Output  | [Guide](http://apex.apache.org/docs/malhar/operators/jmsMultiPortOutputOperator/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/jms/AbstractJMSOutputOperator.html) |
-| Json Formatter | Process  | [Guide](http://apex.apache.org/docs/malhar/operators/jsonFormatter/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/formatter/JsonFormatter.html) |
-| Json Parser | Process  | [Guide](http://apex.apache.org/docs/malhar/operators/jsonParser/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/parser/JsonParser.html) |
-| Kafka Input Operator (Version 0.8) | Input | [Guide](operators/kafkaInputOperator.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kafka/KafkaSinglePortStringInputOperator.html) |
-| Kafka Input Operator (Version 0.9) |   |   |  |
-| Kafka Output Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kafka/AbstractKafkaOutputOperator.html) |
-| Kinesis Input Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kinesis/AbstractKinesisInputOperator.html) |
-| Kinesis Output Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kinesis/AbstractKinesisOutputOperator.html) |
-| Parquet Parser |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/parquet/AbstractParquetFileReader.html) |
-| PMML | Process  |   | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/pmml/operator/AbstractPMMLScoringOperator.html) |
-| Pravega Input |   |   | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/pravega/AbstractPravegaInputOperator.html) |
-| RabbitMQ Input Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/rabbitmq/AbstractRabbitMQInputOperator.html) |
-| RabbitMQ Output Operator |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/rabbitmq/AbstractRabbitMQOutputOperator.html) |
-| Reconciler plugin |   |   |  |
-| Regex splitter |   |   |  |
-| S3 Input Operator (Block reading) |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/fs/S3InputModule.html) |
-| S3 Input Operator (Line reading) |   |   |  |
-| S3 Output Operator (block) |   |   |  |
-| S3 Output Operator (line) |   |   |  |
-| SMTP output |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/SmtpOutputOperator.html) |
-| Solace |   |   |  |
-| Solr Output |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/solr/AbstractSolrOutputOperator.html) |
-| SQS Input |   |   |  |
-| Stateless Transform | Process  |   |  |
-| TcpInputOperator | Input  | [Guide](operators/tcpinputoperator.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/web/TcpInputOperator.html) |
-| WAL plugin |   |   |  |
-| Web - AbstractHttpServerOperator | Input/Output  | [Guide](operators/abstracthttpserver.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/web/AbstractHttpServerOperator.html) |
-| Web - AbstractWebSocketServlet |   | [Guide](operators/abstracthttpserver.md) | [Java Docs]( https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/web/AbstractWebSocketServlet.html) |
-| xml Formatter |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/formatter/XmlFormatter.html) |
-| xml Parser |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/parser/XmlParser.html) |
-
-- Input
-    + TCP Input Operator [Guide](operators/tcpinputoperator.md)
-    + Event Hub Input Operator [Guide](operators/eventhubinput.md)
-    + Kafka Input [Guide](http://apex.apache.org/docs/malhar/operators/kafkaInputOperator/)
-      and [Java Doc](https://ci.apache.org/projects/apex-malhar/apex-malhar-javadoc-release-3.6/com/datatorrent/contrib/kafka/KafkaSinglePortStringInputOperator.html)
-    + HDFS Input [Guide](http://apex.apache.org/docs/malhar/operators/fsInputOperator/)
-      and [Java Doc](https://ci.apache.org/projects/apex-malhar/apex-malhar-javadoc-release-3.6/com/datatorrent/demos/wordcount/LineReader.html)
-    + HDFS Input for large files [Guide](http://apex.apache.org/docs/malhar/operators/file_splitter/)
-      and [Java Doc](https://ci.apache.org/projects/apex-malhar/apex-malhar-javadoc-release-3.6/com/datatorrent/lib/io/fs/FileSplitter.html)
-    + JDBC Input [Guide](https://github.com/apache/apex-malhar/blob/master/docs/operators/jdbcPollInputOperator.md)
-       and [Java Doc](https://ci.apache.org/projects/apex-malhar/apex-malhar-javadoc-release-3.6/com/datatorrent/lib/db/jdbc/JdbcPollInputOperator.html)
-    + JMS Input [Guide](http://apex.apache.org/docs/malhar/operators/jmsInputOperator/)
-      and [Java Doc](https://ci.apache.org/projects/apex-malhar/apex-malhar-javadoc-release-3.6/com/datatorrent/lib/io/jms/JMSStringInputOperator.html)
-
-- Process
-    + PMML Operator [Guide](operators/PMML_operator.md)
-    + Drools Operator [Guide](operators/drools_operator.md)
-    + Block Reader [Guide](http://apex.apache.org/docs/malhar/operators/block_reader/)
-      and [Java Doc](https://ci.apache.org/projects/apex-malhar/apex-malhar-javadoc-release-3.6/com/datatorrent/contrib/parser/AbstractBlockReader.html)
-    + CSV Parser [Guide](http://apex.apache.org/docs/malhar/operators/csvParserOperator/)
-      and [Java Doc](https://ci.apache.org/projects/apex-malhar/apex-malhar-javadoc-release-3.6/com/datatorrent/contrib/parser/CsvParser.html)
-    + JSON Parser [Guide](http://apex.apache.org/docs/malhar/operators/jsonParser/)
-      and [Java Doc](https://ci.apache.org/projects/apex-malhar/apex-malhar-javadoc-release-3.6/com/datatorrent/contrib/parser/JsonParser.html)
-    + JSON Formatter  [Guide](http://apex.apache.org/docs/malhar/operators/jsonFormatter/)
-      and [Java Doc](https://ci.apache.org/projects/apex-malhar/apex-malhar-javadoc-release-3.6/com/datatorrent/lib/formatter/JsonFormatter.html)
-    + Deduper  [Guide](http://apex.apache.org/docs/malhar/operators/deduper/)
-      and [Java Doc](https://ci.apache.org/projects/apex-malhar/apex-malhar-javadoc-release-3.6/org/apache/apex/malhar/lib/dedup/AbstractDeduper.html)
-    + Enrich [Guide](http://apex.apache.org/docs/malhar/operators/enricher/)
-      and [Java Doc](https://ci.apache.org/projects/apex-malhar/apex-malhar-javadoc-release-3.6/com/datatorrent/contrib/enrich/AbstractEnricher.html)
-    + Filter  [Guide](http://apex.apache.org/docs/malhar/operators/filter/)
-      and [Java Doc](https://ci.apache.org/projects/apex-malhar/apex-malhar-javadoc-release-3.6/com/datatorrent/lib/filter/FilterOperator.html)
-    + Transform  [Guide](http://apex.apache.org/docs/malhar/operators/transform/)
-      and [Java Doc](https://ci.apache.org/projects/apex-malhar/apex-malhar-javadoc-release-3.6/com/datatorrent/lib/filter/TransformOperator.html)
-
-- Output
-    + Elasticsearch Output Operator [Guide](operators/elasticsearch.md)
-    + Event Hub Output Operator [Guide](operators/eventhuboutput.md)
-    + Azure Blob Output Operator [Guide](operators/azure_blob.md)
-    + HDFS Output [Guide](http://apex.apache.org/docs/malhar/operators/file_output)
-      and [Java Doc](https://ci.apache.org/projects/apex-malhar/apex-malhar-javadoc-release-3.6/com/datatorrent/lib/io/fs/AbstractFileOutputOperator.html)
-    + JMS Output [Guide](http://apex.apache.org/docs/malhar/operators/jmsMultiPortOutputOperator/)
-      and [Java Doc](https://ci.apache.org/projects/apex-malhar/apex-malhar-javadoc-release-3.6/com/datatorrent/lib/io/jms/JMSMultiPortOutputOperator.html)
-
-- Input/Output
-    + AbstractHttpServer Operator [Guide](operators/abstracthttpserver.md)
+| **Operator Name** | **Category** | **Description** | **Guide** | **Java Docs** |
+| --- | --- | --- | --- | --- |
+| ActiveMQ | Input Connector | This operator ingests data from the configured ActiveMQ message broker. |   | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/activemq/AbstractActiveMQInputOperator.html)|
+| Avro Parser | Parse | This operator parses Avro data and construct POJOs (Plain Old Java Objects) from it. |   |   |
+| Azure Blob | Output Connector | The Azure blob output operator writes data to Azure blob storage in a fault tolerant way. | [Guide](operators/azure\_blob.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/azure/blob/package-summary.html) |
+| Azure Event Hub | Input Connector | The fault tolerant Azure event hub operator connects to the Azure event hub and gets data for an Apex app. | [Guide](operators/eventhuboutput.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/azure/eventhub/package-summary.html) |
+| Cassandra Output | Output Connector | This operator receives data and writes to a Cassandra system. |   |   [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/cassandra/AbstractCassandraTransactionableOutputOperator.html) |
+| CSV Formatter | Serialize | This operator receives a POJO (Plain Old Java Objects) as an incoming tuple, converts the data in the incoming POJO to a custom delimited string and emits the delimited string. | [Guide](http://apex.apache.org/docs/malhar/operators/csvformatter/) |   [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/formatter/CsvFormatter.html) |
+| CSV Parser | Parse | The purpose of this operator is to parse delimited records and construct POJOs (Plain Old Java Objects) from them. | [Guide](http://apex.apache.org/docs/malhar/operators/csvParserOperator/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/parser/AbstractCsvParser.html) |
+| Deduper (Malhar) | Transform | This operator employs a large scale distributed persistent hashing mechanism (known as the Managed State) which allows it to identify if a particular tuple is duplicate or unique. | [Guide](operators/deduper.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/org/apache/apex/malhar/lib/dedup/AbstractDeduper.html) |
+| Drools | Analyze | The Drools analytics operator analyzes incoming tuples with rules using the Drools rules engine in a scale-out fashion. | [Guide](operators/drools\_operator.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/drools/operator/DroolsOperator.html) |
+| Elastic Search Output | Output Connector | This operator receives data and writes to an Elasticsearch system. | [Guide](operators/elasticsearch.md) |   [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/elasticsearch/AbstractElasticSearchOutputOperator.html)) |
+| Elasticsearch | Output Connector | The Elasticsearch operator enables Apex application to write data to elastic search in a fault tolerant way |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/elasticsearch/AbstractElasticSearchInputOperator.html)) |
+| File Splitter + Block Reader (Block Reading) | Input Connector | File Splitter: This operator's main function is to split a file virtually and create metadata describing the files and the splits, so that non-overlapping sets of file blocks can be read and parsed faster while avoiding bottlenecks. Block Reader: This is a scalable operator that reads, and parses blocks of data sources into records. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/fs/AbstractFileSplitter.html), [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/block/AbstractBlockReader.html) |
+| File Splitter + Block Reader (Line Reading) | Input Connector | File Splitter: This operator's main function is to split a file virtually and create metadata describing the files and the splits, so that non-overlapping sets of file blocks can be read and parsed faster while avoiding bottlenecks. Line Reader: This is a scalable operator that reads and parses lines of data sources into records. |   |   |
+| Filter | Transform | This operator receives a POJO (Plain Old Java Objects) as an incoming tuple and based on the filter condition it emits filtered tuples on one output port and rest on another output port. | [Guide](http://apex.apache.org/docs/malhar/operators/filter/) |   [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/filter/FilterOperator.html)  |
+| Flume input | Input Connector | This operator ingests data from a configured Flume data log system. |   | \*\*Needs to be Published\*\* |
+| FS Enrichment | Transform | This operator receives a POJO (Plain Old Java Objects) as an incoming tuple and uses an external source to enrich the data in the incoming tuple and finally emits the enriched data as a new enriched POJO.Supported backends are Delimited FS, Fixed Width FS and JDBC |   | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/operators/enrichment/AbstractEnricher.html)  |
+| FS Output Operator | Output Connector | This is an output operator that persists newly discovered data to files in a fault tolerant way. |   | \*\*Needs to be Published\*\* |
+| FS Input Operator |   |   |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/fs/AbstractFileInputOperator.html)  |
+| Hbase Input | Input Connector | The HBase input operator enables reading data from HBase in real-time and makes the data available for an Apex app. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/couchbase/AbstractCouchBaseInputOperator.html) |
+| HBase Output | Output Connector | This operator receives data and writes to configured HBase system. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/hbase/AbstractHBaseOutputOperator.html) |
+| Hive Output Operator | Output Connector | This operator receives data and writes to a Hive data warehouse. |   | \*\*Needs to be Published\*\* |
+| JDBC Enrichment | Transform | This operator receives an POJO (Plain Old Java Object) as an incoming tuple and uses an external source to enrich the data in the incoming tuple and finally emits the enriched data as a new enriched POJO. |   | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/operators/enrichment/AbstractEnricher.html)  |
+| JDBC Input Operator | Input Connector | This operator scans the JDBC database table in parallel fashion. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/db/jdbc/AbstractJdbcInputOperator.html) |
+| JDBC output | Output Connector | This operator receives an input stream of POJOs and inserts them as rows in a database table in a fault-tolerant way. | [Guide](https://github.com/apache/apex-malhar/blob/master/docs/operators/jdbcPollInputOperator.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/db/jdbc/AbstractJdbcTransactionableOutputOperator.html) |
+| JMS Input Operator | Input Connector | The JMS input operator consumes data from a messaging system using the JMS client API and supports both the publish-subscribe (topics) and point-to-point (queues) modes. | [Guide](http://apex.apache.org/docs/malhar/operators/jmsInputOperator/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/jms/AbstractJMSInputOperator.html) |
+| JMS Output Operator | Output Connector | This operator receives data and writes to a JMS system. | [Guide](http://apex.apache.org/docs/malhar/operators/jmsMultiPortOutputOperator/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/jms/AbstractJMSOutputOperator.html) |
+| Json Formatter | Serialize | The purpose of operator is to consume POJOs (Plain Old Java Objects) and write them as JSON records. | [Guide](http://apex.apache.org/docs/malhar/operators/jsonFormatter/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/formatter/JsonFormatter.html) |
+| Json Parser | Parse | The purpose of this operator is to parse JSON records and construct POJOs (Plain Old Java Objects) from them. | [Guide](http://apex.apache.org/docs/malhar/operators/jsonParser/) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/parser/JsonParser.html) |
+| Kafka Input Operator (Version 0.8) | Input Connector | The fault tolerant Kafka input operator consumes data from the partitions of a Kafka topic for processing in Apex. | [Guide](operators/kafkaInputOperator.md) | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kafka/AbstractKafkaInputOperator.html)  |
+| Kafka Input Operator (Version 0.9) | Input Connector | The fault tolerant Kafka input operator consumes data from the partitions of a Kafka topic for processing in Apex and also works with MapR Streams. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/org/apache/apex/malhar/kafka/AbstractKafkaInputOperator.html) |
+| Kafka Output Operator | Output Connector | This operator receives data and writes each line as a message in a configured Apache Kafka topic. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kafka/AbstractKafkaOutputOperator.html) |
+| Kinesis Input Operator | Input Connector | This operator ingests data from configured AWS Kinesis streams. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kinesis/AbstractKinesisInputOperator.html) |
+| Kinesis Output | Output Connector | This operator receives data and writes to configured AWS Kinesis streams. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/kinesis/AbstractKinesisOutputOperator.html) |
+| Parquet Parser | Parse | The purpose of this operator is to parse Parquet data and construct POJOs (Plain Old Java Objects) from it. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/parquet/AbstractParquetFileReader.html) |
+| PMML | Score | The PMML operator runs machine scoring models on the incoming tuples. This enables data to be scored as per ML models. |   |   [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/pmml/operator/AbstractPMMLScoringOperator.html) |
+| Pravega Input | Input Connector | The Pravega input operator connects to Pravega and gets data in a fault tolerant way. |   |   [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/pravega/AbstractPravegaInputOperator.html) |
+| RabbitMQ Input Operator | Input Connector | This operator ingests data from configured RabbitMQ message systems. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/rabbitmq/AbstractRabbitMQInputOperator.html) |
+| RabbitMQ Output Operator | Output Connector | This operator receives data and writes to configured RabbitMQ message systems. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/rabbitmq/AbstractRabbitMQOutputOperator.html) |
+| RegexParser | Parse | The RegexParser is designed to parse records based on a regex pattern and construct a concrete java class also known as POJO (Plain Old Java Objects) out of it. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/parser/RegexParser.html) |
+| S3 Input Operator (Block reading) | Input Connector | S3 Input Operator: This operator ingests records by scanning data from configured Amazon S3 buckets. Block Reader: This is a scalable operator that reads and parses blocks of data sources into records. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/fs/S3InputModule.html) |
+| S3 Input Operator (Line reading) | Input Connector | S3 Input Operator: This operator ingests records by scanning data from configured Amazon S3 buckets.  Line Reader: This is a scalable operator that reads and parses lines of data sources into records. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/org/apache/apex/malhar/lib/fs/s3/S3RecordReaderModule.html) |
+| S3 Output Operator (block) | Output Connector | S3 Output Operator: The purpose of S3Output module is to upload files/directories into an Amazon S3 bucket using the multipart upload feature. Block Reader: This is a scalable operator that reads and parses blocks of data sources into records. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/org/apache/apex/malhar/lib/fs/s3/S3OutputModule.html) |
+| S3 Output Operator (line) | Output Connector | S3 Output Operator: The purpose of S3Output module is to upload files/directories into an Amazon S3 bucket using the multipart upload feature. Line Reader: This is a scalable operator that reads and parses lines of data sources into records. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/org/apache/apex/malhar/lib/fs/s3/S3TupleOutputModule.html) |
+| SMTP output | Output Connector | This operator sends notifications via SMTP. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/io/SmtpOutputOperator.html)) |
+| Solace | Input Connector | The fault tolerant Solace input operator connects to Solace and gets data in a fault tolerant way. |   |   |
+| Solr Output | Output Connector | This operator receives data and writes to a Solr search platform. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/contrib/solr/AbstractSolrOutputOperator.html)) |
+| SQS Input | Input Connector | This operator ingests data from a configured Amazon SQS message system. |   |   |
+| Stateless Transform | Transform | This operator is stateless and receives objects on its input port; for each such input object, it creates a new output object whose fields are computed as expressions involving fields of the input object. |   |   |
+| TcpInputOperator | Input Connector | The TCP input operator enables an Apex operator to recieve TCP connections and process data directly with and Apex app. | [Guide](operators/tcpinputoperator.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/web/AbstractTcpInputOperator.html) |
+| Web - AbstractHttpServerOperator | Input Connector | The HTTP server operator enables Apex operator to host an HTTP server and post data from HTTP request into an Apex app. | [Guide](operators/abstracthttpserver.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/web/AbstractHttpServerOperator.html) |
+| Web - AbstractWebSocketServlet | Input Connector | The WebSocket server operator enables Apex operator to host a WebSocket server and send data to subscribers directly from Apex app. | [Guide](operators/abstracthttpserver.md) | [Java Docs](https://www.datatorrent.com/docs/saarang/apidocs/latest/com/datatorrent/web/AbstractWebSocketServlet.html) |
+| xml Formatter | Serialize | The purpose of operator is to consume POJOs (Plain Old Java Objects) and write them as XML records. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/formatter/XmlFormatter.html) |
+| xml Parser | Parse | The purpose of this operator is to parse XML records and construct POJOs (Plain Old Java Objects) from it. |   | [Java Docs](https://www.datatorrent.com/docs/dt-malhar/apidocs/latest/com/datatorrent/lib/parser/XmlParser.html) |
